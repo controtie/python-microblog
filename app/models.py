@@ -16,6 +16,10 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+    def avatar(self, size):
+        return 'https://source.unsplash.com/random/128x128'
+
+
     def __repr__(self):
         return '<User {}>'.format(self.username)
 

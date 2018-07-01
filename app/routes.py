@@ -68,6 +68,13 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
+@app.route('/about')
+def about():
+    avatar_size = 128
+    random_avatar = 'https://source.unsplash.com/random/{}x{}'.format(avatar_size, avatar_size)
+    return render_template('about.html', avatar=random_avatar);
+
+
 @app.route('/user/<username>')
 @login_required
 def user(username):

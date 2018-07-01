@@ -9,6 +9,7 @@
   </table>
   <hr>
   {% for post in posts %}
+  <img src={{post.author.avatar(128)}}>
   <h4>{{post.author.username}} says: {{post.body}}</h4>
   {% endfor %}
 {% endblock %}

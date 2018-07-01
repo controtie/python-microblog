@@ -17,8 +17,7 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
     def avatar(self, size):
-        return 'https://source.unsplash.com/random/128x128'
-
+        return 'https://source.unsplash.com/random/{}x{}'.format(size, size)
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
